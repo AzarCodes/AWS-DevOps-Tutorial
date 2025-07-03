@@ -1,0 +1,32 @@
+sudo apt update
+
+sudo apt install -y curl wget apt-transport-https
+
+sudo systemctl enable --now docker
+
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+
+chmod +x minikube
+sudo mv minikube /usr/local/bin/
+
+
+# Start minikube
+
+minikube start --driver=docker --vm=true
+
+# Show all cluster and context configuration on our machine
+
+kubectl config get-context
+
+
+# Switch to the Correct Context
+
+kubectl config use-context kind-azarcluster
+
+# Stop and Deleter minikube
+minikube stop
+minikube delete
+
+# Every 2.0s: kubectl get nodes 
+
+watch kubectl get nodes

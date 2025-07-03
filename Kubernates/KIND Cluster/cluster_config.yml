@@ -1,0 +1,19 @@
+apiVersion: kind.x-k8s.io/v1alpha4 #apiVersion for kind cluster configuration
+kind: Cluster
+
+nodes:
+  - role: control-plane
+    image: kindest/node:v1.31.2 #version of Kubernetes node image
+  - role: worker
+    image: kindest/node:v1.31.2 #version of Kubernetes node image
+  - role: worker
+    image: kindest/node:v1.31.2 #version of Kubernetes node image
+  - role: worker
+    image: kindest/node:v1.31.2 #version of Kubernetes node image
+    extraPortMappings: #extra port mappings for the worker node
+      - containerPort: 80 #expose port 80 on the worker node
+        hostPort: 80
+        protocol: TCP #protocol for the port mapping
+      - containerPort: 443 #expose port 443 on the worker node
+        hostPort: 443
+        protocol: TCP #protocol for the port mapping
