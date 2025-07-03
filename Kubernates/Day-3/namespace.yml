@@ -1,0 +1,4 @@
+apiVersion: v1 #apiVersion for Kubernetes resources
+kind: Namespace #kind of resource
+metadata:
+  name: nginx #name of the namespace

@@ -1,0 +1,6 @@
+kubectl get pods #No resources found in default namespace.
+
+kubectl get pods -n kube-system # to check pod running inside kube-system
+
+
+
