@@ -1,0 +1,20 @@
+apiVersion: apps/v1 #apiVersion for Kubernetes resources
+kind: Deployment #kind of resource
+metadata: #metadata for the deployment
+  name: nginx-deployment #name of the deployment
+  namespace: nginx #namespace for the deployment
+spec:
+  replicas: 2 #number of replicas for the deployment
+  selector: #selector for the deployment
+    matchLabels: #label selector for the pods managed by the deployment
+      app: nginx #label selector for the deployment
+  template: #template for the pod managed by the deployment
+    metadata: #metadata for the pod template
+      labels:
+        app: nginx #labels for the pod template
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80

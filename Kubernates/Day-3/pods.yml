@@ -1,0 +1,11 @@
+apiVersion: v1 #apiVersion for Kubernetes resources
+kind: Pod #kind of resource
+metadata:
+  name: nginx-pod #name of the pod
+  namespace: nginx #namespace for the pod
+spec:
+  containers:
+  - name: nginx #name of the container
+    image: nginx:latest #image for the container
+    ports:
+    - containerPort: 80 #port exposed by the container

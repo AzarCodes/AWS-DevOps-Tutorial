@@ -1,4 +1,16 @@
+# This YAML file defines multiple Kubernetes resources including namespace.
+
 apiVersion: v1 #apiVersion for Kubernetes resources
 kind: Namespace #kind of resource
 metadata:
   name: nginx #name of the namespace
+---
+apiVersion: v1 #apiVersion for Kubernetes resources
+kind: Namespace #kind of resource
+metadata:
+  name: dev #name of the service
+---
+apiVersion: v1 #apiVersion for Kubernetes resources
+kind: Namespace #kind of resource
+metadata:
+  name: devqa #name of the namespace
