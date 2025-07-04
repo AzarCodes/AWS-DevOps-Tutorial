@@ -14,7 +14,7 @@ spec:
         app: nginx #labels for the pod template
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: nginx #name of the container
+        image: nginx:latest #image for the container
         ports:
-        - containerPort: 80
+        - containerPort: 80 #port exposed by the container
